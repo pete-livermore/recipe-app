@@ -1,1 +1,5 @@
-@import './components/hero';
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import './components/hero.scss';
+@import './components/topnav.scss';
+@import './common/base.scss';

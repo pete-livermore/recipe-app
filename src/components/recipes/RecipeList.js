@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
-import { Link } from 'react-router-dom'
-import spinner from '../../assets/images/Spinner.gif'
+import Spinner from 'react-bootstrap/Spinner'
+import RecipeCard from './RecipeCard'
 
 const RecipeList = () => {
   const [searchResult, setSearchResult] = useState('')
@@ -35,7 +34,6 @@ const RecipeList = () => {
       recipes.forEach(meal => {
         categoryListItems.indexOf(meal.strCategory) === -1 && categoryListItems.push(meal.strCategory)
       })
-      console.log(`category list ${categoryListItems}`)
       setCategoryList(categoryListItems)
     }
   }, [recipes])
@@ -69,7 +67,7 @@ const RecipeList = () => {
   return (
     <>
       <Container className='mt-4'>
-        <Row className='mt-5 mb-5 search-filter'>
+        <Row className='ms-3 mt-5 mb-5 search-filter'>
           <Col sm={8} className='ps-0'>
             <h3>Search for recipes</h3>
             <p> Got a dish in mind? see if we have it by typing the name below! </p>
@@ -88,20 +86,19 @@ const RecipeList = () => {
         <Row className='mt-5 justify-content-between mx-0'>
           {searchFilter().length ?
             (
-              searchFilter().map((recipe, i) =>
-                <Col key={i} id={i} className='mb-4'>
-                  <Card style={{ width: '14rem' }}>
-                    <Link to={`/recipes/${recipe.idMeal}`}>
-                      <Card.Img variant="top" src={recipe.strMealThumb} alt={recipe.strMeal} />
-                      <Card.Body>
-                        <Card.Title>{recipe.strMeal}</Card.Title>
-                      </Card.Body>
-                    </Link>
-                  </Card>
+              searchFilter().map(recipe =>
+                <Col key={recipe.idMeal} id={recipe.idMeal} className='mb-4' sm={12} md={4} lg={3} xl={2}>
+                  <RecipeCard recipe={recipe} />
                 </Col>
               )
             )
-            : (hasError.error ? <h4 className='text-danger text-center'>{hasError.message}</h4> : <Container className='d-flex justify-content-center'><img src={spinner} alt={spinner} /> </Container>)
+            : (hasError.error ?
+              <h4 className='text-danger text-center'>{hasError.message}</h4>
+              : <Container className='d-flex justify-content-center'>
+                <Spinner animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              </Container>)
           }
         </Row>
       </Container>

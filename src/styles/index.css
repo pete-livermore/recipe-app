@@ -5,13 +5,45 @@
 }
 
 .overlay-text {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.6);
-  color: #1f1f1f;
   padding: 2.5rem 4rem;
+  color: #212529;
+}
+
+.about-text {
+  background-color: #fff;
+  width: 400px;
+  padding: 0;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 20px;
+}
+
+.navbar-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 15%;
+  padding-left: 0;
+  margin-right: 20px;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #e9ecef;
 }
 /*# sourceMappingURL=index.css.map */

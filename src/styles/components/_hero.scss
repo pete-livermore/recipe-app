@@ -5,11 +5,13 @@
 }
 
 .overlay-text {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.6);
-  color: rgb(31, 31, 31);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 2.5rem 4rem;
+  color: $gray-900;
+}
+
+.about-text {
+  background-color: $white;
+  width: 400px;
+  padding: 0;
 }
