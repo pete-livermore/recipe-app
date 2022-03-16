@@ -6,7 +6,7 @@ const RecipeCard = ({ recipe }) => (
     <Card className='h-100 w-100'>
       <Card.Img variant="top" className='w-100' src={recipe.strMealThumb} alt={recipe.strMeal} />
       <Card.Body>
-        <Card.Title className='text-primary'>{recipe.strMeal}</Card.Title>
+        <Card.Title className='text-secondary'>{recipe.strMeal}</Card.Title>
       </Card.Body>
     </Card>
   </Link>

@@ -31,8 +31,8 @@ const ShowCategory = () => {
       <h2 className='mb-4'>{`Check out our ${categoryName} recipes`}</h2>
       <Row className='justify-content-between wrap align-items-stretch'>
         {categoryRecipes.length ? categoryRecipes.map(recipe => (
-          <Col key={recipe.idMeal} id={recipe.idMeal} className='mb-4'>
-            <RecipeCard recipe={recipe} cardWidth='16rem' />
+          <Col key={recipe.idMeal} id={recipe.idMeal} className='mb-4' sm={12} md={4} lg={3} xl={2}>
+            <RecipeCard recipe={recipe} />
           </Col>
         ))
           : hasError.error ?

@@ -85,20 +85,18 @@ const RecipeList = () => {
         </Row>
         <Row className='mt-5 justify-content-between mx-0'>
           {searchFilter().length ?
-            (
-              searchFilter().map(recipe =>
-                <Col key={recipe.idMeal} id={recipe.idMeal} className='mb-4' sm={12} md={4} lg={3} xl={2}>
-                  <RecipeCard recipe={recipe} />
-                </Col>
-              )
+            searchFilter().map(recipe =>
+              <Col key={recipe.idMeal} id={recipe.idMeal} className='mb-4' sm={12} md={4} lg={3} xl={2}>
+                <RecipeCard recipe={recipe} />
+              </Col>
             )
-            : (hasError.error ?
+            : hasError.error ?
               <h4 className='text-danger text-center'>{hasError.message}</h4>
               : <Container className='d-flex justify-content-center'>
                 <Spinner animation="border" role="status">
                   <span className="visually-hidden">Loading...</span>
                 </Spinner>
-              </Container>)
+              </Container>
           }
         </Row>
       </Container>
