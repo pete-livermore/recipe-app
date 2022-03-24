@@ -19,8 +19,11 @@ Technologies used
 App walkthrough
 ----
 ### Homepage
-The homepage consists of a container with a carousel
+The homepage consists of a container with a carousel that displays two random recipes, and about me text, and a series of cards (with links) showing different recipe categories
 ![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648129768/Habit_tracker_app/Screenshot_2022-03-24_at_13.48.35_o2t0e3.png "Homepage")
+
+The layout is responsive:
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648134289/Habit_tracker_app/Screenshot_2022-03-24_at_15.04.14_gzlfhw.png "Responsive Homepage")
 
 ### Searching/filtering
 Clicking the "Start your search" button on the homepage or "Browse all recipes in the top navbar", will take the user to a page where they can search for a specific recipe or filter by category:
