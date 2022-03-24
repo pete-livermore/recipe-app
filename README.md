@@ -20,9 +20,11 @@ App walkthrough
 ----
 ### Homepage
 The homepage consists of a container with a carousel that displays two random recipes, and about me text, and a series of cards (with links) showing different recipe categories
+
 ![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648129768/Habit_tracker_app/Screenshot_2022-03-24_at_13.48.35_o2t0e3.png "Homepage")
 
 The layout is responsive:
+
 ![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648134289/Habit_tracker_app/Screenshot_2022-03-24_at_15.04.14_gzlfhw.png "Responsive Homepage")
 
 ### Searching/filtering
