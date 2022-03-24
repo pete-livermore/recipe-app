@@ -90,7 +90,13 @@ Search and filtering together:
     })
   }
 ```
-Error handling:
+API error handling:
+```javascript
+  } catch (err) {
+    setHasError({ error: true, message: err.message })
+  }
+```
+
 ```javascript
   : hasError.error ?
      <h4 className='text-danger text-center'>{hasError.message}</h4>
