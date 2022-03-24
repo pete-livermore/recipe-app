@@ -56,8 +56,7 @@ Below that, are the instructions and an embedded YouTube video tutorial:
 
 Code examples
 ----
-Search and filtering together:
-
+Generating list of categories:
 ```javascript
   useEffect(() => {
     if (recipes.length) {
@@ -69,7 +68,7 @@ Search and filtering together:
     }
   }, [recipes])
 ```
-
+Search and filtering together:
 ```javascript
   const categoryFilter = () => {
     if (category === false || category === 'All') {
