@@ -90,6 +90,17 @@ Search and filtering together:
     })
   }
 ```
+Error handling:
+```javascript
+            : hasError.error ?
+              <h4 className='text-danger text-center'>{hasError.message}</h4>
+              : <Container className='d-flex justify-content-center'>
+                <Spinner animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              </Container>
+```
+
 
 How I worked
 ----
