@@ -20,7 +20,7 @@ App walkthrough
 ----
 
 
-![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1647454416/Screenshot_2022-03-16_at_18.11.05_abysvi.png ""Search functionality)
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1647454416/Screenshot_2022-03-16_at_18.11.05_abysvi.png "Search functionality")
 
 Code examples
 ----
