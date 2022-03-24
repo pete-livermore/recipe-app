@@ -23,20 +23,18 @@ const SuggestedRecipes = () => {
     getCategories()
   }, [])
 
-  console.log(categoryList)
-
   return (
-    <Container className='mt-5'>
-      <h4 className='mb-3'>Recipe categories</h4>
-      <Stack direction="horizontal" className='flex-wrap justify-content-between'>
+    <Container className='mt-4'>
+      <h4 className='mb-5'>Find a recipe by category</h4>
+      <Stack direction="horizontal" className='flex-wrap justify-content-between' gap={2}>
         {categoryList.length ?
           categoryList.map(category => (
-            <Col key={category.idCategory}>
+            <Col key={category.idCategory} sm={12} md={4} lg={3} xl={2}>
               <Link to={`/categories/${category.strCategory}`} className='text-decoration-none'>
-                <Card style={{ width: '18rem' }} className='mb-4'>
+                <Card className='mb-4'>
                   <Card.Img variant='top' src={category.strCategoryThumb} alt={category.strCategory} />
-                  <Card.Body>
-                    <Card.Title>{category.strCategory}</Card.Title>
+                  <Card.Body className='bg-light'>
+                    <Card.Title className='text-dark text-center'>{category.strCategory}</Card.Title>
                   </Card.Body>
                 </Card>
               </Link>

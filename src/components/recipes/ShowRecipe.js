@@ -48,7 +48,7 @@ const ShowRecipe = () => {
     if (recipe.strTags) {
       const categoryArr = recipe.strTags.split(',')
       return (
-        categoryArr.map((category, i) => <div key={i} className='p-1 bg-primary text-light rounded'>{category}</div>)
+        categoryArr.map((category, i) => <div key={i} className='p-1 text-light rounded category-tag'>{category}</div>)
       )
     }
     else return <p>None yet</p>
@@ -58,7 +58,7 @@ const ShowRecipe = () => {
     <Container>
       {Object.keys(recipe).length ?
         <>
-          <h2>{recipe.strMeal}</h2>
+          <h2 className='mt-4'>{recipe.strMeal}</h2>
           <hr />
           <Row>
             <Col lg={4}>
@@ -74,7 +74,7 @@ const ShowRecipe = () => {
           </Stack>
           <Row className='mt-4'>
             <hr />
-            <Col lg={7} xl={8} className='bg-light p-3 rounded'>
+            <Col lg={7} xl={8} className='p-3'>
               <h4>Instructions:</h4>
               <ol>
                 {recipe.strInstructions.split('.').splice(0, recipe.strInstructions.split('.').length - 1).map((str, i) => {

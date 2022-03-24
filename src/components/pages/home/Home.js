@@ -16,17 +16,18 @@ const Home = () => {
           <Col lg={8} className='rounded mr-6'>
             <Hero />
           </Col>
-          <div className='about-text rounded p-4 ml-4 d-flex flex-column justify-content-evenly'>
+          <Col className='about-text rounded p-4 ml-4 d-flex flex-column justify-content-evenly text-center'>
             <h3 className='mb-4'>Welcome to the Recipe App!</h3>
             <p>Looking for inspiration or got a dish in mind? We've got a huge collection of recipes that will keep your tastebuds happy for months.</p>
-            <h6>Simply search for a recipe or select a category below to find something tasty! </h6>
+            <p class='fw-bold'>Simply search for a recipe or select a category below to find something tasty!</p>
             <Container className='text-center'>
               <Link to='/browse'>
-                <Button variant="primary">Start your search</Button>
+                <Button className='home-search-button'>Start your search</Button>
               </Link>
             </Container>
-          </div>
+          </Col>
         </Row>
+        <hr className='mt-4' />
       </Container>
       <Categories />
     </>

@@ -40,7 +40,6 @@ const RecipeList = () => {
 
   const handleSearch = (e) => {
     setSearchResult(e.target.value)
-    console.log('search result=>', searchResult)
   }
 
   const handleChange = (e) => {
