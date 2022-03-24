@@ -18,6 +18,9 @@ Technologies used
 
 App walkthrough
 ----
+### Homepage
+The homepage consists of a container with a carousel
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648129768/Habit_tracker_app/Screenshot_2022-03-24_at_13.48.35_o2t0e3.png "Homepage")
 
 ### Searching/filtering
 Clicking the "Start your search" button on the homepage or "Browse all recipes in the top navbar", will take the user to a page where they can search for a specific recipe or filter by category:
