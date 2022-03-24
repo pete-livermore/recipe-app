@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+# Recipe finder app 
+Application built with React, consuming the [RESTFUL MealDB API](https://www.themealdb.com/api.php), which has the functionality to search for recipes and filter by category. It has been deployed on Netlify [here](https://restipe-app.netlify.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648129768/Habit_tracker_app/Screenshot_2022-03-24_at_13.48.35_o2t0e3.png "Homepage")
 
-## Available Scripts
+Technologies used
+----
+* React.js
+* Javascript (ES6)
+* HTML5
+* SCSS
+* Bootstrap
+* MealDB API
+* Axios
+* Insomnia REST Client
+* Yarn
+* react-router-dom
 
-In the project directory, you can run:
+App walkthrough
+----
+### Homepage
+The homepage consists of a container with a carousel
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648129768/Habit_tracker_app/Screenshot_2022-03-24_at_13.48.35_o2t0e3.png "Homepage")
 
-### `npm start`
+### Searching/filtering
+Clicking the "Start your search" button on the homepage or "Browse all recipes in the top navbar", will take the user to a page where they can search for a specific recipe or filter by category:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1647454416/Screenshot_2022-03-16_at_18.11.05_abysvi.png "Search page")
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Searching a specific recipe:
 
-### `npm test`
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648131295/Habit_tracker_app/Screenshot_2022-03-24_at_14.14.34_vxfgvp.png "Search functionality")
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Filtering by category:
 
-### `npm run build`
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648131397/Habit_tracker_app/Screenshot_2022-03-24_at_14.16.02_t9b75n.png "Filter functionality")
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Searching and filtering together:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648131301/Habit_tracker_app/Screenshot_2022-03-24_at_14.14.02_fwavvd.png "Search and filter")
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Browsing by category
 
-### `npm run eject`
+On the homepage is a list of categories. Clicking a specific category will take the user to all recipes that are tagged with that particular category:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648131464/Habit_tracker_app/Screenshot_2022-03-24_at_14.17.16_rijsuy.png "Browse by category")
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Recipe page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+When the user clicks a specific recipe card, they are naviagted to the recipe detail page.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+At the top of the page is a list of ingredients and an image:
 
-## Learn More
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648131605/Habit_tracker_app/Screenshot_2022-03-24_at_14.19.29_lesvlc.png "Recipe page 1")
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Below that, are the instructions and an embedded YouTube video tutorial:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648131606/Habit_tracker_app/Screenshot_2022-03-24_at_14.19.35_awkwc4.png "Recipe page 2")
 
-### Code Splitting
+Code examples
+----
+Generating list of categories:
+```javascript
+  useEffect(() => {
+    if (recipes.length) {
+      const categoryListItems = []
+      recipes.forEach(meal => {
+        categoryListItems.indexOf(meal.strCategory) === -1 && categoryListItems.push(meal.strCategory)
+      })
+      setCategoryList(categoryListItems)
+    }
+  }, [recipes])
+```
+Search and filtering together:
+```javascript
+  const categoryFilter = () => {
+    if (category === false || category === 'All') {
+      return recipes
+    }
+    return recipes.filter(recipe => {
+      return recipe.strCategory.includes(category)
+    }
+    )
+  }
+```
+```javascript
+  const searchFilter = () => {
+    if (searchResult === false) {
+      return categoryFilter()
+    }
+    return categoryFilter().filter(recipe => {
+      return recipe.strMeal.toLowerCase().includes(searchResult.toLowerCase())
+    })
+  }
+```
+API error handling:
+```javascript
+  } catch (err) {
+    setHasError({ error: true, message: err.message })
+  }
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```javascript
+  : hasError.error ?
+     <h4 className='text-danger text-center'>{hasError.message}</h4>
+       : <Container className='d-flex justify-content-center'>
+          <Spinner animation="border" role="status">
+             <span className="visually-hidden">Loading...</span>
+          </Spinner>
+         </Container>
+```
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+How I worked
+----
+What I got from the project
+----
+### General points
+### Technical points
