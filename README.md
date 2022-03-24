@@ -56,6 +56,42 @@ Below that, are the instructions and an embedded YouTube video tutorial:
 
 Code examples
 ----
+Search and filtering together:
+
+```javascript
+  useEffect(() => {
+    if (recipes.length) {
+      const categoryListItems = []
+      recipes.forEach(meal => {
+        categoryListItems.indexOf(meal.strCategory) === -1 && categoryListItems.push(meal.strCategory)
+      })
+      setCategoryList(categoryListItems)
+    }
+  }, [recipes])
+```
+
+```javascript
+  const categoryFilter = () => {
+    if (category === false || category === 'All') {
+      return recipes
+    }
+    return recipes.filter(recipe => {
+      return recipe.strCategory.includes(category)
+    }
+    )
+  }
+```
+```javascript
+  const searchFilter = () => {
+    if (searchResult === false) {
+      return categoryFilter()
+    }
+    return categoryFilter().filter(recipe => {
+      return recipe.strMeal.toLowerCase().includes(searchResult.toLowerCase())
+    })
+  }
+```
+
 How I worked
 ----
 What I got from the project
