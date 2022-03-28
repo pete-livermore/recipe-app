@@ -28,7 +28,7 @@ The layout is responsive:
 ![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648134289/Habit_tracker_app/Screenshot_2022-03-24_at_15.04.14_gzlfhw.png "Responsive Homepage")
 
 ### Searching/filtering
-Clicking the "Start your search" button on the homepage or "Browse all recipes in the top navbar", will take the user to a page where they can search for a specific recipe or filter by category:
+Clicking the "Start your search" button on the homepage or "Browse all recipes" in the top navbar, will take the user to a page where they can search for a specific recipe or filter by category:
 
 ![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1647454416/Screenshot_2022-03-16_at_18.11.05_abysvi.png "Search page")
 
