@@ -1,7 +1,14 @@
 # Recipe finder app 
-Application built with React, consuming the [RESTFUL MealDB API](https://www.themealdb.com/api.php), which has the functionality to search for recipes and filter by category. It has been deployed on Netlify [here](https://restipe-app.netlify.app/)
+React application built with my classmate Jomari Camangon, consuming the [RESTFUL MealDB API](https://www.themealdb.com/api.php), which has the functionality to search for recipes and filter by category. It has been deployed on Netlify [here](https://restipe-app.netlify.app/)
 
 ![alt text](https://res.cloudinary.com/di7ndofao/image/upload/v1648129768/Habit_tracker_app/Screenshot_2022-03-24_at_13.48.35_o2t0e3.png "Homepage")
+
+Brief
+----
+* 2 day-project
+* App must consume a public API
+* Must have several components
+* Should have multiple pages
 
 Technologies used
 ----
@@ -116,9 +123,30 @@ API error handling:
 ```
 
 
-How I worked
-----
-What I got from the project
+How we worked & what I got from the project
 ----
 ### General points
+This was first ever experience of coding collaboratively, which was an initially challenging but ultimately very positive experience. Until this point I was only accustomed to individual problem solving and project visioning, but this project showed me the value of doing these things collaboratively. Together, we were able to improve upon our individual outputs and enhance overall efficiency by discussing ideas and solving problems together.
+
+We began the process with establishing the API
+
+Because with two people, we needed to avoid duplication and code conflicts, 
+
+it helped me think about projects in a more task and feature-based way.
+
+so this project helped me to adopt a more open mindset about 
+
+I was primarily responsible for:
+
+combined search and filter functionality
+styling using Bootstrap
+
+
+Spent time exploring the API endpoints using Insomia.
+
 ### Technical points
+
+*Axios and API calls*
+*React* - State - hooks, useEffect, react router (routes, useParams)
+*React Bootstrap* - 
+*Vanilla JavaScript* - Accessing nested data
