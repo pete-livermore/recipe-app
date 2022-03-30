@@ -88,7 +88,7 @@ Generating list of categories:
 Search and filtering together:
 ```javascript
   const categoryFilter = () => {
-    if (category === false || category === 'All') {
+    if (!category || category === 'All') {
       return recipes
     }
     return recipes.filter(recipe => {
@@ -99,7 +99,7 @@ Search and filtering together:
 ```
 ```javascript
   const searchFilter = () => {
-    if (searchResult === false) {
+    if (!searchResult) {
       return categoryFilter()
     }
     return categoryFilter().filter(recipe => {
