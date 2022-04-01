@@ -127,12 +127,15 @@ API error handling:
 
 How we worked & what I got from the project
 ----
-### General points
-This was my first ever experience of coding collaboratively, and was an initially challenging but ultimately very positive experience. Until this point I was only accustomed to individual problem solving and project visioning, but this project showed me the value of doing these things collaboratively. When coding with JS, there are often multiple different ways to achieve something and this project helped me develop a more open mindset about coding approaches. Together, we were able to improve upon our individual outputs and enhance overall efficiency by discussing ideas and solving problems together.
-
+### Planning
 We began the process by exploring and testing the API endpoints using Insomnia, which enabled us to map out what data we would have access to and how to dig down into it. We then wireframed our UIs using Figma so we had a good picture of what we were trying to build and how it would function.
 
-With two people, we needed to avoid duplication and code conflicts. Therefore, we coded together using Visual Studio Live Share. I found this to be an ideal way to work at this stage, as it gave both of us an opportunity to think about and understand all features of the app. Even when you are working on separate files/bits of code, you are able to watch how the other person is approaching something, which I found edme in my own thinking sometimes. In order to improve efficiency and speed, we then identified specific tasks and features that we could work on separately in the evenings.
+### Coding
+#### General points
+This was my first ever experience of coding collaboratively, and was an initially challenging but ultimately very positive experience. Until this point I was only accustomed to individual problem solving and project visioning, but this project showed me the value of doing these things collaboratively. When coding with JS, there are often multiple different ways to achieve something and this project helped me develop a more open mindset about coding approaches. Together, we were able to improve upon our individual outputs and enhance overall efficiency by discussing ideas and solving problems together.
+
+With two people, we needed to avoid duplication and code conflicts. Therefore, we coded together using Visual Studio Live Share. I found this to be an ideal way to work at this stage, as it gave both of us an opportunity to think about and understand all features of the app. Even when you are working on separate files/bits of code, you are able to watch how the other person is approaching something, which I found helped me in my own thinking sometimes. In order to improve efficiency and speed, we then identified specific tasks and features that we could work on separately in the evenings.
+
 
 The features that I focused on in my own invidual coding sessions were:
 
@@ -140,7 +143,7 @@ The features that I focused on in my own invidual coding sessions were:
 * API error handling
 * Styling using Bootstrap
 
-### Technical points
+#### Technical points
 *Axios and API calls* - This was a major feature of this project. Exploring the API endpoints using Insomnia was a particularly useful exercise as all APIs are different and it helps you get to grips with the structure of the data. And when working with the data in React, and having to extract data in a prescribed structure, I learned a lot about what can be good about APIs and what is less ideal, which got me thinking about how I would design my own.
 
 *React* - This was my first significant project built with React, so it took a little while to adapt my mindset from where I was thinking of things in terms of Vanilla JavaScript DOM manipulation. However, I really enjoyed using the framework and I felt comfortable building components and passing props. I strived to keep my code DRY and so I was constantly thinking about where I could componentize, and make the components clear and useable. My main areas of progress were developing my understanding of the useState and useEffect hooks to trigger the API requests and to (re)-render components with data from the API, and using react router to create multiple pages in the app, enable navigation, and utilise data from a specific route (e.g. useParams).
