@@ -12,7 +12,7 @@ Brief
 
 Technologies used
 ----
-* React.js
+* React
 * Javascript (ES6)
 * HTML5
 * SCSS
